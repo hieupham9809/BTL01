@@ -4,6 +4,8 @@ using System.Collections;
 public class EnemyMovementController : MonoBehaviour {
     public float enemySpeed;
     Rigidbody2D enemyRB;
+    Rigidbody2D parentRB;
+
     Animator enemyAnimation;
     // Use this for initialization
     public GameObject enemyGraphic;
@@ -11,20 +13,21 @@ public class EnemyMovementController : MonoBehaviour {
     float facingTime=5f;
     float nexFlip=0f;
     bool canFlip = true;
-    Transform enemyTrans;
+    GameObject enemy;
 
     void Awake() {
-        enemyRB = GetComponent<Rigidbody2D>();
+
+        enemyRB = GetComponentInChildren<Rigidbody2D>();
+        parentRB = GetComponent<Rigidbody2D>();
         enemyAnimation = GetComponentInChildren<Animator>();
     }
 
 	void Start () {
-
+     
     }
 
     // Update is called once per frame
     void Update () {
-        
         if (Time.time > nexFlip)
         {
             nexFlip = Time.time + facingTime;
