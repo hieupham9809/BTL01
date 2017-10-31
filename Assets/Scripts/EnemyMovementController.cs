@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemyMovementController : MonoBehaviour {
     public float enemySpeed;
     Rigidbody2D enemyRB;
-    Rigidbody2D parentRB;
+    Rigidbody2D childrenRB;
 
     Animator enemyAnimation;
     // Use this for initialization
@@ -17,17 +17,19 @@ public class EnemyMovementController : MonoBehaviour {
 
     void Awake() {
 
-        enemyRB = GetComponentInChildren<Rigidbody2D>();
-        parentRB = GetComponent<Rigidbody2D>();
+        enemyRB = GetComponent<Rigidbody2D>();
         enemyAnimation = GetComponentInChildren<Animator>();
     }
 
 	void Start () {
-     
+        
     }
 
     // Update is called once per frame
+
+
     void Update () {
+        enemyGraphic.transform.localPosition=new Vector3(0,0,0);
         if (Time.time > nexFlip)
         {
             nexFlip = Time.time + facingTime;
@@ -57,7 +59,10 @@ public class EnemyMovementController : MonoBehaviour {
             {
                 enemyRB.AddForce(new Vector2(-1, 0) * enemySpeed);
             }
-            else enemyRB.AddForce(new Vector2(1, 0) * enemySpeed);
+            else
+            {
+                enemyRB.AddForce(new Vector2(1, 0) * enemySpeed);
+            }
             enemyAnimation.SetFloat("speed", enemySpeed);
         }
     }
