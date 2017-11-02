@@ -7,10 +7,15 @@ public class CameraFollow : MonoBehaviour {
     Vector3 offset;
     float lowY;
 
-	// Use this for initialization
+    // Use this for initialization
+    void Awake() {
+        transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
+    }
+
 	void Start () {
         offset = transform.position - target.position;
         lowY = transform.position.y;
+        
 	}
 	
 	// Update is called once per frame
