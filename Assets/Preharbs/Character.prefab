@@ -10,9 +10,10 @@ GameObject:
   - 4: {fileID: 449908}
   - 212: {fileID: 21245852}
   - 95: {fileID: 9527428}
-  - 58: {fileID: 5817002}
   - 50: {fileID: 5071914}
   - 114: {fileID: 11488730}
+  - 58: {fileID: 5814534}
+  - 58: {fileID: 5853790}
   m_Layer: 0
   m_Name: Character
   m_TagString: Main CHaracter
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.0970154, y: 1.8, z: 0}
+  m_LocalPosition: {x: -16.23, y: -1.6, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -50,7 +51,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &5817002
+--- !u!58 &5814534
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -61,9 +62,23 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.1, y: -0.47}
+  m_Offset: {x: 0.06, y: 0}
   serializedVersion: 2
-  m_Radius: 0.12
+  m_Radius: 0.43
+--- !u!58 &5853790
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134766}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.08, y: -0.52}
+  serializedVersion: 2
+  m_Radius: 0.08
 --- !u!95 &9527428
 Animator:
   serializedVersion: 3
@@ -93,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxSpeed: 5
-  JumpHeight: 5
+  JumpHeight: 8
   MainCharacter: {fileID: 134766}
 --- !u!212 &21245852
 SpriteRenderer:
