@@ -19,6 +19,7 @@ public class EnemyMovementController : MonoBehaviour {
 
         enemyRB = GetComponent<Rigidbody2D>();
         enemyAnimation = GetComponentInChildren<Animator>();
+        
     }
 
 	void Start () {
@@ -29,7 +30,8 @@ public class EnemyMovementController : MonoBehaviour {
 
 
     void Update () {
-        enemyGraphic.transform.localPosition=new Vector3(0,0,0);
+     
+        
         if (Time.time > nexFlip)
         {
             nexFlip = Time.time + facingTime;
@@ -57,11 +59,11 @@ public class EnemyMovementController : MonoBehaviour {
         {
             if (!facingRight)
             {
-                enemyRB.AddForce(new Vector2(-1, 0) * enemySpeed);
+               enemyRB.AddForce(new Vector2(-1, 0) * enemySpeed);
             }
             else
             {
-                enemyRB.AddForce(new Vector2(1, 0) * enemySpeed);
+               enemyRB.AddForce(new Vector2(1, 0) * enemySpeed);
             }
             enemyAnimation.SetFloat("speed", enemySpeed);
         }
