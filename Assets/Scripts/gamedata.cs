@@ -17,14 +17,14 @@ public class gamedata : MonoBehaviour {
     //Ghi file điểm
     public void write_socer(int best_score)
     {
-        ArrayList arraySocer = new ArrayList();
-        player_socers ps = new player_socers();
-        ps.best_socers = best_score;
-        arraySocer.Add(ps);
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/" + file_name);
-        bf.Serialize(file, arraySocer);
-        file.Close();
+        //ArrayList arraySocer = new ArrayList();
+        //player_socers ps = new player_socers();
+        //ps.best_socers = best_score;
+        //arraySocer.Add(ps);
+        //BinaryFormatter bf = new BinaryFormatter();
+        //FileStream file = File.Create(Application.persistentDataPath + "/" + file_name);
+        //bf.Serialize(file, arraySocer);
+        //file.Close();
     }
 
     //đọc file điểm

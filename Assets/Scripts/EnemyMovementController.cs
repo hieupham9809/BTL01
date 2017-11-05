@@ -42,7 +42,13 @@ public class EnemyMovementController : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other) {
         if(other.tag=="Main Character")
         {
-            if(facingRight && other.transform.position.x < transform.position.x)
+            if (!other.gameObject.GetComponent<PlayerHealth>().isAlive)
+            {
+                enemyAnimation.SetFloat("speed", 0);
+                return;
+
+            }
+            if (facingRight && other.transform.position.x < transform.position.x)
             {
                 Flip();
             }else if(!facingRight && other.transform.position.x > transform.position.x)
@@ -57,6 +63,11 @@ public class EnemyMovementController : MonoBehaviour {
     {
         if(other.tag=="Main Character")
         {
+            if(!other.gameObject.GetComponent<PlayerHealth>().isAlive)
+            {
+                enemyAnimation.SetFloat("speed", 0);
+                return;
+            }
             if (!facingRight)
             {
                enemyRB.AddForce(new Vector2(-1, 0) * enemySpeed);
