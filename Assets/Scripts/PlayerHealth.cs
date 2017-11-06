@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour {
         {
             makeDeath();
         }
+        if (transform.position.y < -10) gameObject.SetActive(false);
     }
 
    public void addDamage(bool dam)
@@ -35,6 +36,7 @@ public class PlayerHealth : MonoBehaviour {
             isAlive = false;
             
         }
+        Instantiate(BloodEffect, transform.position, transform.rotation);
     }
     
     void makeDeath()
@@ -42,7 +44,7 @@ public class PlayerHealth : MonoBehaviour {
         control.MaxSpeed = 0;
         if (isAlive == false && myAnim.GetCurrentAnimatorStateInfo(0).IsName("Die"))
         {
-            Instantiate(BloodEffect, transform.position, transform.rotation);
+           
             gameObject.SetActive(false);
         }
 
