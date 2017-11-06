@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class EnemyDamage : MonoBehaviour {
-    float damrate = 0.5f;
+    float damrate = 1f;
     float nextdam ;
     Animator anim;
     // Use this for initialization
@@ -27,7 +27,6 @@ public class EnemyDamage : MonoBehaviour {
             }
             anim.SetBool("attack", true);         
             PlayerHealth myPlayerHealth = other.gameObject.GetComponent<PlayerHealth>();
-            if (myPlayerHealth.isAlive == false) return;
             myPlayerHealth.addDamage(true);
             nextdam = damrate + Time.time;
            
@@ -43,9 +42,8 @@ public class EnemyDamage : MonoBehaviour {
                 anim.SetBool("attack", false);
                 return;
             }
-            anim.SetBool("attack", true);            
-            PlayerHealth myPlayerHealth = other.gameObject.GetComponent<PlayerHealth>();
-            if (myPlayerHealth.isAlive == false) return;
+            anim.SetBool("attack", true);
+            PlayerHealth myPlayerHealth = other.gameObject.GetComponent<PlayerHealth>();            
             myPlayerHealth.addDamage(true);
             nextdam = damrate + Time.time;
 
