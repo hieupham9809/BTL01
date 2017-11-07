@@ -63,7 +63,7 @@ public class EnemyMovementController : MonoBehaviour {
     {
         if(other.tag=="Main Character")
         {
-            if(!other.gameObject.GetComponent<PlayerHealth>().isAlive)
+            if (!other.gameObject.GetComponent<PlayerHealth>().isAlive)
             {
                 enemyAnimation.SetFloat("speed", 0);
                 return;
