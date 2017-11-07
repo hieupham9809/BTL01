@@ -9,13 +9,13 @@ public class CameraFollow : MonoBehaviour {
     float highY;
     // Use this for initialization
     void Awake() {
-        transform.position = new Vector3(target.position.x+4, target.position.y+3, transform.position.z);
+        transform.position = new Vector3(target.position.x+4, target.position.y+6, transform.position.z-5);
     }
 
 	void Start () {
         offset = transform.position - target.position;
         lowY = transform.position.y;
-        highY = transform.position.y+1;
+        highY = transform.position.y;
 
     }
 	
