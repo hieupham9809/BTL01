@@ -63,11 +63,11 @@ public class EnemyMovementController : MonoBehaviour {
     {
         if(other.tag=="Main Character")
         {
-            if (!other.gameObject.GetComponent<PlayerHealth>().isAlive)
-            {
-                enemyAnimation.SetFloat("speed", 0);
-                return;
-            }
+            //if (!other.gameObject.GetComponent<PlayerHealth>().isAlive)
+            //{
+            //    enemyAnimation.SetFloat("speed", 0);
+            //    return;
+            //}
             if (!facingRight)
             {
                enemyRB.AddForce(new Vector2(-1, 0) * enemySpeed);
