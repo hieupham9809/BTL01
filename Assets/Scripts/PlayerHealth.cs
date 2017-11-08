@@ -9,17 +9,25 @@ public class PlayerHealth : MonoBehaviour {
     Animator myAnim;
     public bool isAlive;
     PlayerController control;
+    bool hurt;
+    float nexthurt;
     // Use this for initialization
     void Start () {
         currentHealth = MaxHealth;
         myAnim = GetComponent<Animator>();
         control = gameObject.GetComponent<PlayerController>();
         isAlive = true;
+        nexthurt = 0f;
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
         myAnim.SetBool("Alive", isAlive);//set animation for die
+        if(hurt==true && nexthurt < Time.time)
+        {
+            myAnim.SetBool("Hurt", false);
+            nexthurt = Time.time + 2;
+        }
         if (!isAlive)
         {
             makeDeath();
@@ -29,6 +37,8 @@ public class PlayerHealth : MonoBehaviour {
 
    public void addDamage(bool dam)
     {
+        hurt = true;
+        myAnim.SetBool("Hurt", true);
         if (!dam) return;
         currentHealth--;
         if (currentHealth <= 0)
