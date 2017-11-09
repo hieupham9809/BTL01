@@ -13,31 +13,31 @@ AnimatorController:
     m_DefaultFloat: 2
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Alive
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 1
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Jump
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Hurt
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Dizzy
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -382,7 +382,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.019709527
   m_TransitionOffset: 0
   m_ExitTime: 0.59459454
-  m_HasExitTime: 0
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -496,7 +496,7 @@ AnimatorStateTransition:
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 110238606}
   m_Solo: 0
-  m_Mute: 1
+  m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0.25
@@ -712,7 +712,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.12800816
   m_TransitionOffset: 0
   m_ExitTime: 0.6982173
-  m_HasExitTime: 0
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -982,7 +982,7 @@ AnimatorStateMachine:
     m_Position: {x: 192, y: 288, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110238606}
-    m_Position: {x: 840, y: 60, z: 0}
+    m_Position: {x: 912, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110254842}
     m_Position: {x: 1056, y: -204, z: 0}
