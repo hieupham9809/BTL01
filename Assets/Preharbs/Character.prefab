@@ -14,6 +14,8 @@ GameObject:
   - 114: {fileID: 11488730}
   - 58: {fileID: 5814534}
   - 58: {fileID: 5853790}
+  - 60: {fileID: 6038588}
+  - 114: {fileID: 11417334}
   m_Layer: 0
   m_Name: Character
   m_TagString: Main Character
@@ -28,7 +30,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.23, y: -1.6, z: 0}
+  m_LocalPosition: {x: 8.61, y: 0.8, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -62,9 +64,9 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.06, y: 0}
+  m_Offset: {x: 0.06, y: 0.07}
   serializedVersion: 2
-  m_Radius: 0.43
+  m_Radius: 0.36
 --- !u!58 &5853790
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -78,7 +80,51 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0.08, y: -0.52}
   serializedVersion: 2
-  m_Radius: 0.08
+  m_Radius: 0.06
+--- !u!60 &6038588
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134766}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 0.41, y: -0.044999998}
+      - {x: 0.42999998, y: -0.035}
+      - {x: 0.42999998, y: 0.114999995}
+      - {x: 0.41, y: 0.195}
+      - {x: 0.26999998, y: 0.355}
+      - {x: 0.08, y: 0.39499998}
+      - {x: -0.03, y: 0.505}
+      - {x: -0.099999994, y: 0.515}
+      - {x: -0.19, y: 0.515}
+      - {x: -0.25, y: 0.505}
+      - {x: -0.39999998, y: 0.345}
+      - {x: -0.42, y: 0.235}
+      - {x: -0.42, y: 0.175}
+      - {x: -0.35999998, y: -0.015}
+      - {x: -0.19999999, y: -0.185}
+      - {x: -0.22, y: -0.24499999}
+      - {x: -0.08, y: -0.315}
+      - {x: -0.12, y: -0.385}
+      - {x: -0.14, y: -0.435}
+      - {x: -0.14, y: -0.48499998}
+      - {x: -0.089999996, y: -0.525}
+      - {x: -0.03, y: -0.615}
+      - {x: 0.24, y: -0.615}
+      - {x: 0.31, y: -0.475}
+      - {x: 0.28, y: -0.345}
+      - {x: 0.35999998, y: -0.225}
+    - - {x: -0.24, y: 0.095}
+      - {x: -0.24, y: 0.065}
+      - {x: -0.22999999, y: 0.055}
+      - {x: -0.22999999, y: 0.015}
 --- !u!95 &9527428
 Animator:
   serializedVersion: 3
@@ -96,6 +142,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11417334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe45c63eb780f1b4484e578cafa40f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 3
+  BloodEffect: {fileID: 115756, guid: 66d2e49b2bb25174aa916ee7c7c52819, type: 2}
+  isAlive: 0
 --- !u!114 &11488730
 MonoBehaviour:
   m_ObjectHideFlags: 1
