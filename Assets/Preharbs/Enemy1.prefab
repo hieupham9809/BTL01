@@ -13,9 +13,10 @@ GameObject:
   - 60: {fileID: 6078404}
   - 58: {fileID: 5890230}
   - 114: {fileID: 11459130}
+  - 114: {fileID: 11489780}
   m_Layer: 0
   m_Name: Enemy1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -462,6 +463,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c888a774fd68b4781d37a2cd0b736b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11489780
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f53aef9582e8754e8e004456b92bef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealthEF: {fileID: 132044, guid: 2de2e6fc91d2e704f94058a3a95551fd, type: 2}
+  enemyHealthSlider: {fileID: 0}
 --- !u!212 &21291436
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Main Character
+  - Enemy
   layers:
   - Default
   - TransparentFX

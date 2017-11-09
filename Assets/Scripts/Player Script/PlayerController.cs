@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour {
             flip();
         }
        
-        if (Input.GetKey(KeyCode.Space)) {
+        if (Input.GetKey(KeyCode.Space)||Input.GetAxis("Vertical")>0) {
             if (Grounded)
             {
                 Grounded = false;
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour {
   
 
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "Ground") {
+        if (other.gameObject.tag == "Ground"||other.gameObject.tag=="Enemy") {
             Grounded = true;
         }
     }
