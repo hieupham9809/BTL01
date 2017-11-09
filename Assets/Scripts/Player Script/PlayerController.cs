@@ -9,9 +9,13 @@ public class PlayerController : MonoBehaviour {
     bool facingRight;
     public GameObject MainCharacter;
     bool Grounded;
- 
-	// Use this for initialization
-	void Start () {
+    public Transform gunTip;
+    public GameObject bullet;
+    float fireRate = 0.1f;
+    float nextFire = 0;
+
+    // Use this for initialization
+    void Start () {
        
         myBody =GetComponent<Rigidbody2D>();
         myAnim = GetComponent<Animator>();
@@ -42,11 +46,15 @@ public class PlayerController : MonoBehaviour {
                 myBody.velocity = new Vector2(myBody.velocity.x, JumpHeight);
             }
         }
+        //Chuc nang bang tu ban phim
+        if (Input.GetAxisRaw("Fire1") > 0)
+        {
+            fireBullet();
+        }
 
-       
-       
-        
-	}
+
+
+    }
     //flip the face of character
     void flip() {
         facingRight = !facingRight;
@@ -60,6 +68,22 @@ public class PlayerController : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "Ground"||other.gameObject.tag=="Enemy") {
             Grounded = true;
+        }
+    }
+    //Chuc nang ban
+    void fireBullet()
+    {
+        if (Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            if (facingRight)
+            {
+                Instantiate(bullet, gunTip.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+            }
+            else if (!facingRight)
+            {
+                Instantiate(bullet, gunTip.position, Quaternion.Euler(new Vector3(0, 0, 180)));
+            }
         }
     }
 }
