@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Score : MonoBehaviour {
-    public GUIText scoreGUIText;
-    public GUIText highscoreGUIText;
+    public Text scoreGUIText;
+    public Text highscoreGUIText;
     private int score;
     private int highScore;
     private string highscoreKey = "highScore";
@@ -16,7 +17,7 @@ public class Score : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (highScore < score) highScore = score;
-        scoreGUIText.text = score.ToString();
+        scoreGUIText.text = "Score : "+ score.ToString();
         highscoreGUIText.text = "High Score : " + highScore.ToString();
 
 	}
