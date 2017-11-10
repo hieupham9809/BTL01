@@ -28,7 +28,7 @@ public class PlayerHealth : MonoBehaviour {
         DyingSound = gameObject.AddComponent<AudioSource>();
         DyingSound.clip = DyingSoundClip;
         DyingSound.Stop();
-
+        /*Khoi tao mot vai dac tinh*/
         currentHealth = MaxHealth;
         myAnim = GetComponent<Animator>();
         control = gameObject.GetComponent<PlayerController>();
@@ -50,7 +50,7 @@ public class PlayerHealth : MonoBehaviour {
         }
         if (transform.position.y < -10) gameObject.SetActive(false);
     }
-
+    //ham nhan damage
    public void addDamage(bool dam)
     {
         hurt = true;
@@ -65,7 +65,7 @@ public class PlayerHealth : MonoBehaviour {
         }
        
     }
-    
+    //ham chet
     void makeDeath()
     {
         control.MaxSpeed = 0;
