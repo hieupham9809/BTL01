@@ -36,7 +36,8 @@ public class EnemyHealth : MonoBehaviour {
 
 	void makeDead(){
         FindObjectOfType<Score>().AddPoint(point);
+        Instantiate(enemyHealthEF, transform.position, transform.rotation);
         Destroy (gameObject);
-		Instantiate (enemyHealthEF, transform.position, transform.rotation);
+		
 	}
 }

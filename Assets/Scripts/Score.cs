@@ -8,8 +8,18 @@ public class Score : MonoBehaviour {
     private int score;
     private int highScore;
     private string highscoreKey = "highScore";
+    public AudioClip ping_sound;
+    AudioSource ping;
 
 	// Use this for initialization
+
+    void Awake()
+    {
+        ping = gameObject.AddComponent<AudioSource>();
+        ping.clip = ping_sound;
+        ping.Stop();
+    }
+
 	void Start () {
         Initialize();
     }
@@ -29,6 +39,7 @@ public class Score : MonoBehaviour {
     public void AddPoint(int point)
     {
         score += point;
+        ping.Play();
     }
     public void save()
     {

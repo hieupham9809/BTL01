@@ -11,8 +11,24 @@ public class PlayerHealth : MonoBehaviour {
     PlayerController control;
     bool hurt;
     float nexthurt;
+
+    //sound for player
+    AudioSource DyingSound;
+    AudioSource hurtSound;
+    public AudioClip hurtSoundClip;
+    public AudioClip DyingSoundClip;
     // Use this for initialization
     void Start () {
+        /*add audiosource for sounds*/
+        //hurt sound
+        hurtSound = gameObject.AddComponent<AudioSource>();
+        hurtSound.clip = hurtSoundClip;
+        hurtSound.Stop();
+        //Dying sound
+        DyingSound = gameObject.AddComponent<AudioSource>();
+        DyingSound.clip = DyingSoundClip;
+        DyingSound.Stop();
+
         currentHealth = MaxHealth;
         myAnim = GetComponent<Animator>();
         control = gameObject.GetComponent<PlayerController>();
@@ -39,12 +55,13 @@ public class PlayerHealth : MonoBehaviour {
     {
         hurt = true;
         myAnim.SetBool("Hurt", true);
+        hurtSound.Play();
         if (!dam) return;
         currentHealth--;
         if (currentHealth <= 0)
         {
             isAlive = false;
-            
+            DyingSound.Play();
         }
        
     }
@@ -54,12 +71,13 @@ public class PlayerHealth : MonoBehaviour {
         control.MaxSpeed = 0;
         if (isAlive == false && myAnim.GetCurrentAnimatorStateInfo(0).IsName("Die"))
         {
+            
             Instantiate(BloodEffect, transform.position, transform.rotation);
             gameObject.SetActive(false);
         }
 
         
-        //gameObject.SetActive(false);
+        
     }
 
     

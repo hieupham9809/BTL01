@@ -13,8 +13,16 @@ public class PlayerController : MonoBehaviour {
     public GameObject bullet;
     float fireRate = 0.1f;
     float nextFire = 0;
-
+    AudioSource JumpAudioSource;
+    public AudioClip JumpClip;
     // Use this for initialization
+
+    void Awake() {
+        JumpAudioSource = gameObject.AddComponent<AudioSource>();
+        JumpAudioSource.clip = JumpClip;
+        JumpAudioSource.Stop();
+    }
+    
     void Start () {
        
         myBody =GetComponent<Rigidbody2D>();
@@ -44,6 +52,7 @@ public class PlayerController : MonoBehaviour {
             {
                 Grounded = false;
                 myBody.velocity = new Vector2(myBody.velocity.x, JumpHeight);
+                JumpAudioSource.Play();              
             }
         }
         //Chuc nang bang tu ban phim
