@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
@@ -11,6 +12,9 @@ public class PlayerHealth : MonoBehaviour {
     PlayerController control;
     bool hurt;
     float nexthurt;
+
+    //link to health slither
+    public Slider PlayerHealthSlither;
 
     //sound for player
     AudioSource DyingSound;
@@ -28,6 +32,9 @@ public class PlayerHealth : MonoBehaviour {
         DyingSound = gameObject.AddComponent<AudioSource>();
         DyingSound.clip = DyingSoundClip;
         DyingSound.Stop();
+        //Thanh mau
+        PlayerHealthSlither.maxValue = MaxHealth;
+        PlayerHealthSlither.value = MaxHealth;
         /*Khoi tao mot vai dac tinh*/
         currentHealth = MaxHealth;
         myAnim = GetComponent<Animator>();
@@ -38,6 +45,7 @@ public class PlayerHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        PlayerHealthSlither.value = currentHealth;
         myAnim.SetBool("Alive", isAlive);//set animation for die
         if(hurt==true && nexthurt < Time.time)
         {
@@ -58,6 +66,7 @@ public class PlayerHealth : MonoBehaviour {
         hurtSound.Play();
         if (!dam) return;
         currentHealth--;
+
         if (currentHealth <= 0)
         {
             isAlive = false;

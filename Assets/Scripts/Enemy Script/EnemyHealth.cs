@@ -23,13 +23,13 @@ public class EnemyHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        enemyHealthSlider.value = currentHealth;
+    }
 
 	public void addDame(float dame){
 		enemyHealthSlider.gameObject.SetActive (true);
 		currentHealth -= dame;
-		enemyHealthSlider.value = currentHealth;
+		
 		if (currentHealth <= 0)	makeDead ();
         
     }

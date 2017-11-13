@@ -140,7 +140,9 @@ MonoBehaviour:
   MaxHealth: 5
   BloodEffect: {fileID: 115756, guid: 66d2e49b2bb25174aa916ee7c7c52819, type: 2}
   isAlive: 0
+  PlayerHealthSlither: {fileID: 0}
   hurtSoundClip: {fileID: 8300000, guid: ccdf343e26460fd46a512940fb44574b, type: 3}
+  DyingSoundClip: {fileID: 8300000, guid: e1dab6733f9a93146ab291d57b53704f, type: 3}
 --- !u!114 &11488730
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -32,11 +32,15 @@ public class PlayerController : MonoBehaviour {
        
 	}
 	
+    void Update()
+    {
+        //myAnim.SetBool("attack", false);
+    }
 	// Update is called once per frame
 	void FixedUpdate () {       
         float move = Input.GetAxis("Horizontal");
         myAnim.SetFloat("speed", Mathf.Abs(move));//set animation for running
-        
+        myAnim.SetBool("attack", false);
         myBody.velocity = new Vector2(move * MaxSpeed, myBody.velocity.y);
         
         if (move > 0 && !facingRight)
@@ -84,6 +88,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (Time.time > nextFire)
         {
+            myAnim.SetBool("attack", true);
             nextFire = Time.time + fireRate;
             if (facingRight)
             {
@@ -93,6 +98,7 @@ public class PlayerController : MonoBehaviour {
             {
                 Instantiate(bullet, gunTip.position, Quaternion.Euler(new Vector3(0, 0, 180)));
             }
+            
         }
     }
 }
