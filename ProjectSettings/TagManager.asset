@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Main Character
   - Enemy
+  - Health Item
   layers:
   - Default
   - TransparentFX

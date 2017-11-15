@@ -58,6 +58,15 @@ public class PlayerHealth : MonoBehaviour {
         }
         if (transform.position.y < -10) gameObject.SetActive(false);
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Health Item")
+        {
+            AddHealth();
+            Destroy(other.gameObject);
+        }
+    }
     //ham nhan damage
    public void addDamage(bool dam)
     {
@@ -83,10 +92,13 @@ public class PlayerHealth : MonoBehaviour {
             
             Instantiate(BloodEffect, transform.position, transform.rotation);
             gameObject.SetActive(false);
-        }
-
+        }       
         
-        
+    }
+    void AddHealth()
+    {
+        if (currentHealth == MaxHealth) return;
+        currentHealth++;
     }
 
     
