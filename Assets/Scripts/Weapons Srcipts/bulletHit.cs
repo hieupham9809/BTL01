@@ -25,7 +25,7 @@ public class bulletHit : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "shootable")
+        if (other.gameObject.tag == "shootable"|| other.gameObject.tag == "Ground")
         {
             myPC.removeForce();
             Instantiate(bulletExplosion, transform.position, transform.rotation);

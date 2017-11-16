@@ -38,6 +38,6 @@ public class EnemyHealth : MonoBehaviour {
         FindObjectOfType<Score>().AddPoint(point);
         Instantiate(enemyHealthEF, transform.position, transform.rotation);
         Destroy (gameObject);
-		
+        
 	}
 }

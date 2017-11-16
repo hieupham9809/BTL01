@@ -17,21 +17,32 @@ public class PlayerHealth : MonoBehaviour {
     public Slider PlayerHealthSlither;
 
     //sound for player
+   
     AudioSource DyingSound;
     AudioSource hurtSound;
+    
+    
     public AudioClip hurtSoundClip;
     public AudioClip DyingSoundClip;
+    
+
     // Use this for initialization
     void Start () {
         /*add audiosource for sounds*/
+       
+
         //hurt sound
         hurtSound = gameObject.AddComponent<AudioSource>();
         hurtSound.clip = hurtSoundClip;
         hurtSound.Stop();
+
         //Dying sound
         DyingSound = gameObject.AddComponent<AudioSource>();
         DyingSound.clip = DyingSoundClip;
         DyingSound.Stop();
+
+      
+
         //Thanh mau
         PlayerHealthSlither.maxValue = MaxHealth;
         PlayerHealthSlither.value = MaxHealth;
@@ -56,7 +67,10 @@ public class PlayerHealth : MonoBehaviour {
         {
             makeDeath();
         }
-        if (transform.position.y < -10) gameObject.SetActive(false);
+        if (transform.position.y < -10)
+        {
+            isAlive = false;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -79,7 +93,9 @@ public class PlayerHealth : MonoBehaviour {
         if (currentHealth <= 0)
         {
             isAlive = false;
+           
             DyingSound.Play();
+          
         }
        
     }

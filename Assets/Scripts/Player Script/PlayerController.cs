@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
     bool Grounded;
     public Transform gunTip;
     public GameObject bullet;
-    float fireRate = 0.1f;
+    float fireRate = 1.0f;
     float nextFire = 0;
     AudioSource JumpAudioSource;
     public AudioClip JumpClip;
@@ -32,10 +32,7 @@ public class PlayerController : MonoBehaviour {
        
 	}
 	
-    void Update()
-    {
-        //myAnim.SetBool("attack", false);
-    }
+    
 	// Update is called once per frame
 	void FixedUpdate () {       
         float move = Input.GetAxis("Horizontal");
