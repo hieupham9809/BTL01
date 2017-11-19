@@ -19,6 +19,11 @@ public class Manager : MonoBehaviour
     public GameObject character;
 
     // Use this for initialization
+    void Awake()
+    {
+        Time.timeScale = 0;
+    }
+
     void Start()
     {
         title = GameObject.Find("Title");
@@ -62,6 +67,7 @@ public class Manager : MonoBehaviour
 
     void GameStart()
     {
+        Time.timeScale = 1;
         title.SetActive(false);
         EnterGameSound.Stop();
         BackgroundSound.Play();

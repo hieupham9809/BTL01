@@ -9,6 +9,7 @@ TagManager:
   - Main Character
   - Enemy
   - Health Item
+  - Gold Item
   layers:
   - Default
   - TransparentFX

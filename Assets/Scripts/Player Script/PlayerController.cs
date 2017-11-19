@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
     bool Grounded;
     public Transform gunTip;
     public GameObject bullet;
-    float fireRate = 1.0f;
+    float fireRate = 0.7f;
     float nextFire = 0;
     AudioSource JumpAudioSource;
     public AudioClip JumpClip;
@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour {
         JumpAudioSource = gameObject.AddComponent<AudioSource>();
         JumpAudioSource.clip = JumpClip;
         JumpAudioSource.Stop();
+        
     }
     
     void Start () {
@@ -78,6 +79,11 @@ public class PlayerController : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "Ground"||other.gameObject.tag=="Enemy") {
             Grounded = true;
+        }
+        if (other.gameObject.tag == "Gold Item")
+        {
+            Destroy(other.gameObject);
+            FindObjectOfType<Score>().AddPoint(200);            
         }
     }
     //Chuc nang ban

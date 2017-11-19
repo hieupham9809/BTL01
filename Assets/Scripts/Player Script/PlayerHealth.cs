@@ -77,9 +77,10 @@ public class PlayerHealth : MonoBehaviour {
     {
         if (other.tag == "Health Item")
         {
-            AddHealth();
             Destroy(other.gameObject);
+            AddHealth();            
         }
+       
     }
     //ham nhan damage
    public void addDamage(bool dam)
