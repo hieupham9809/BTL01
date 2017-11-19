@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Health Item
   - Gold Item
+  - Gate
   layers:
   - Default
   - TransparentFX

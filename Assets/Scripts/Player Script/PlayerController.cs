@@ -85,6 +85,10 @@ public class PlayerController : MonoBehaviour {
             Destroy(other.gameObject);
             FindObjectOfType<Score>().AddPoint(200);            
         }
+        if (other.gameObject.tag == "Gate")
+        {
+            Application.LoadLevel("Level_boss");
+        }
     }
     //Chuc nang ban
     void fireBullet()

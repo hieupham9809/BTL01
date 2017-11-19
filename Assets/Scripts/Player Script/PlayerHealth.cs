@@ -13,6 +13,8 @@ public class PlayerHealth : MonoBehaviour {
     bool hurt;
     float nexthurt;
 
+    //Game over menu
+    public Canvas gameover;
     //link to health slither
     public Slider PlayerHealthSlither;
 
@@ -29,7 +31,7 @@ public class PlayerHealth : MonoBehaviour {
     // Use this for initialization
     void Start () {
         /*add audiosource for sounds*/
-       
+   
 
         //hurt sound
         hurtSound = gameObject.AddComponent<AudioSource>();
@@ -109,6 +111,7 @@ public class PlayerHealth : MonoBehaviour {
         {            
             Instantiate(BloodEffect, transform.position, transform.rotation);
             gameObject.SetActive(false);
+            FindObjectOfType<Manager>().GameOver();
         }       
         
     }
