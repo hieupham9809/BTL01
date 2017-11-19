@@ -13,6 +13,8 @@ public class PlayerHealth : MonoBehaviour {
     bool hurt;
     float nexthurt;
 
+    //Game over menu
+    public Canvas gameover;
     //link to health slither
     public Slider PlayerHealthSlither;
 
@@ -29,7 +31,7 @@ public class PlayerHealth : MonoBehaviour {
     // Use this for initialization
     void Start () {
         /*add audiosource for sounds*/
-       
+   
 
         //hurt sound
         hurtSound = gameObject.AddComponent<AudioSource>();
@@ -41,11 +43,12 @@ public class PlayerHealth : MonoBehaviour {
         DyingSound.clip = DyingSoundClip;
         DyingSound.Stop();
 
-      
+
 
         //Thanh mau
-        PlayerHealthSlither.maxValue = MaxHealth;
-        PlayerHealthSlither.value = MaxHealth;
+            PlayerHealthSlither.maxValue = MaxHealth;
+            PlayerHealthSlither.value = MaxHealth;
+        
         /*Khoi tao mot vai dac tinh*/
         currentHealth = MaxHealth;
         myAnim = GetComponent<Animator>();
@@ -55,7 +58,7 @@ public class PlayerHealth : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void FixedUpdate () {       
         PlayerHealthSlither.value = currentHealth;
         myAnim.SetBool("Alive", isAlive);//set animation for die
         if(hurt==true && nexthurt < Time.time)
@@ -105,10 +108,10 @@ public class PlayerHealth : MonoBehaviour {
     {
         control.MaxSpeed = 0;
         if (isAlive == false && myAnim.GetCurrentAnimatorStateInfo(0).IsName("Die"))
-        {
-            
+        {            
             Instantiate(BloodEffect, transform.position, transform.rotation);
             gameObject.SetActive(false);
+            FindObjectOfType<Manager>().GameOver();
         }       
         
     }

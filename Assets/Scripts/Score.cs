@@ -5,6 +5,7 @@ using System.Collections;
 public class Score : MonoBehaviour {
     public Text scoreGUIText;
     public Text highscoreGUIText;
+    public Text gameoverScore;
     private int score;
     private int highScore;
     private string highscoreKey = "highScore";
@@ -29,7 +30,7 @@ public class Score : MonoBehaviour {
         if (highScore < score) highScore = score;
         scoreGUIText.text = "Score : "+ score.ToString();
         highscoreGUIText.text = "High Score : " + highScore.ToString();
-
+        
 	}
     private void Initialize()
     {
@@ -43,6 +44,7 @@ public class Score : MonoBehaviour {
     }
     public void save()
     {
+        gameoverScore.text = score.ToString();
         PlayerPrefs.SetInt(highscoreKey, highScore);
         PlayerPrefs.Save();
         Initialize();

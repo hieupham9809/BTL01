@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Manager : MonoBehaviour
 {
+    public GameObject gameovermenu;
 
     public GameObject player;
     private GameObject title;
@@ -22,6 +24,7 @@ public class Manager : MonoBehaviour
     void Awake()
     {
         Time.timeScale = 0;
+        gameovermenu.SetActive(false);
     }
 
     void Start()
@@ -79,6 +82,12 @@ public class Manager : MonoBehaviour
 
         // hiển thị lại Title
         title.SetActive(true);
+
+        //gameover menu
+        gameovermenu.SetActive(true);
+        title.SetActive(false);
+   
+
     }
     public bool IsPlaying()
     {
