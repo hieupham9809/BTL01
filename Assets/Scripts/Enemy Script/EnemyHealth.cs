@@ -24,6 +24,7 @@ public class EnemyHealth : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         enemyHealthSlider.value = currentHealth;
+        if (transform.position.y < -10) Destroy(gameObject);
     }
 
 	public void addDame(float dame){
