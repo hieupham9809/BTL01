@@ -11,10 +11,19 @@ public class PlayerController : MonoBehaviour {
     bool Grounded;
     public Transform gunTip;
     public GameObject bullet;
-    float fireRate = 0.1f;
+    float fireRate = 0.7f;
     float nextFire = 0;
-
+    AudioSource JumpAudioSource;
+    public AudioClip JumpClip;
     // Use this for initialization
+
+    void Awake() {
+        JumpAudioSource = gameObject.AddComponent<AudioSource>();
+        JumpAudioSource.clip = JumpClip;
+        JumpAudioSource.Stop();
+        
+    }
+    
     void Start () {
        
         myBody =GetComponent<Rigidbody2D>();
@@ -24,11 +33,12 @@ public class PlayerController : MonoBehaviour {
        
 	}
 	
+    
 	// Update is called once per frame
 	void FixedUpdate () {       
         float move = Input.GetAxis("Horizontal");
         myAnim.SetFloat("speed", Mathf.Abs(move));//set animation for running
-        
+        myAnim.SetBool("attack", false);
         myBody.velocity = new Vector2(move * MaxSpeed, myBody.velocity.y);
         
         if (move > 0 && !facingRight)
@@ -44,6 +54,7 @@ public class PlayerController : MonoBehaviour {
             {
                 Grounded = false;
                 myBody.velocity = new Vector2(myBody.velocity.x, JumpHeight);
+                JumpAudioSource.Play();              
             }
         }
         //Chuc nang bang tu ban phim
@@ -69,12 +80,22 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.tag == "Ground"||other.gameObject.tag=="Enemy") {
             Grounded = true;
         }
+        if (other.gameObject.tag == "Gold Item")
+        {
+            Destroy(other.gameObject);
+            FindObjectOfType<Score>().AddPoint(200);            
+        }
+        if (other.gameObject.tag == "Gate")
+        {
+            Application.LoadLevel("Level_boss");
+        }
     }
     //Chuc nang ban
     void fireBullet()
     {
         if (Time.time > nextFire)
         {
+            myAnim.SetBool("attack", true);
             nextFire = Time.time + fireRate;
             if (facingRight)
             {
@@ -84,6 +105,7 @@ public class PlayerController : MonoBehaviour {
             {
                 Instantiate(bullet, gunTip.position, Quaternion.Euler(new Vector3(0, 0, 180)));
             }
+            
         }
     }
 }

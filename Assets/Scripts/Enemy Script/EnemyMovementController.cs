@@ -28,9 +28,14 @@ public class EnemyMovementController : MonoBehaviour {
 
     // Update is called once per frame
 
+        void FixedUpdate()
+    {
+        if (!enemyAnimation) Destroy(gameObject);
 
+    }
+    
     void Update () {
-     
+        
         
         if (Time.time > nexFlip)
         {
@@ -63,11 +68,11 @@ public class EnemyMovementController : MonoBehaviour {
     {
         if(other.tag=="Main Character")
         {
-            //if (!other.gameObject.GetComponent<PlayerHealth>().isAlive)
-            //{
-            //    enemyAnimation.SetFloat("speed", 0);
-            //    return;
-            //}
+            if (!other.gameObject.GetComponent<PlayerHealth>().isAlive)
+            {
+                enemyAnimation.SetFloat("speed", 0);
+                return;
+            }
             if (!facingRight)
             {
                enemyRB.AddForce(new Vector2(-1, 0) * enemySpeed);

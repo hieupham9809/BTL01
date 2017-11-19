@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 441918}
   - 198: {fileID: 19825478}
   - 199: {fileID: 19991922}
+  - 114: {fileID: 11415584}
   m_Layer: 0
   m_Name: Blood
   m_TagString: Untagged
@@ -26,10 +27,22 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 14.520226, y: 3.9900649, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: -89.980194, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11415584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3736a49329b34f743a2cfc305edfc7c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alivetime: 2
 --- !u!198 &19825478
 ParticleSystem:
   m_ObjectHideFlags: 1
