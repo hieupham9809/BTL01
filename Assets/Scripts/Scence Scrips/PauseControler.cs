@@ -31,4 +31,11 @@ public class PauseControler : MonoBehaviour {
 	public void Quit(){
 		Application.Quit ();
 	}
+
+	public void TurnOffSound(){
+		if (AudioListener.volume == 0)
+			AudioListener.volume = 1;
+		else
+			AudioListener.volume = 0;
+	}
 }
