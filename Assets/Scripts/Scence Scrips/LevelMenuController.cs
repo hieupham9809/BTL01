@@ -4,7 +4,7 @@ using System.Collections;
 public class LevelMenuController : MonoBehaviour {
 
 	public void PlayGame(){
-		Application.LoadLevel ("Huan_tempscence");
+		Application.LoadLevel ("level1");
 	}
 
 	public void BackToMenu(){
