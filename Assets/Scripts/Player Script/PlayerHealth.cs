@@ -13,8 +13,6 @@ public class PlayerHealth : MonoBehaviour {
     bool hurt;
     float nexthurt;
 
-    //Game over menu
-    public Canvas gameover;
     //link to health slither
     public Slider PlayerHealthSlither;
 

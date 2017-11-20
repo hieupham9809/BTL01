@@ -25,12 +25,13 @@ public class Manager : MonoBehaviour
     {
         Time.timeScale = 0;
         gameovermenu.SetActive(false);
+        title = GameObject.Find("Title");
+       
     }
 
     void Start()
     {
-        title = GameObject.Find("Title");
-
+        
         //Enter game sounds
         EnterGameSound = gameObject.AddComponent<AudioSource>();
         EnterGameSound.clip = EnterGameClip;
