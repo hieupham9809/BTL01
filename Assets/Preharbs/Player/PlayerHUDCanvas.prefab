@@ -838,7 +838,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameovermenu: {fileID: 106376}
-  player: {fileID: 134766, guid: 0512d1f33e5c59348b03680d17febd51, type: 2}
   BackgroundClip: {fileID: 8300000, guid: 89e2ee87c2122f440b0dc13847361559, type: 3}
   GameoverClip: {fileID: 8300000, guid: 3a2e6f3454c3278499554baee72a982e, type: 3}
   EnterGameClip: {fileID: 8300000, guid: 190aa5b1c0cfa894caa6e92fa1106c97, type: 3}

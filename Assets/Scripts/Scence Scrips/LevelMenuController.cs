@@ -4,10 +4,10 @@ using System.Collections;
 public class LevelMenuController : MonoBehaviour {
 
 	public void PlayGame(){
-		Application.LoadLevel ("level1");
+		Application.LoadLevel ("level1");       //Loading level 1
 	}
 
 	public void BackToMenu(){
-		Application.LoadLevel ("MainMenu");
+		Application.LoadLevel ("MainMenu");     //Loading main menu
 	}
 }

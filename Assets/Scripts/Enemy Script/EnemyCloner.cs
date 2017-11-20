@@ -2,9 +2,10 @@
 using System.Collections;
 
 public class EnemyCloner : MonoBehaviour {
-    public GameObject zoombie;
-    public float cloneRate;
-    float nextClone;
+    public int maxNumber;       //Maxnumber of zoombie
+    public GameObject zoombie;  //the zoombie
+    public float cloneRate;     //the minimum time betwween 2 clone
+    float nextClone;            
 	// Use this for initialization
 	void Start () {
         nextClone = 0.0f;
@@ -12,10 +13,11 @@ public class EnemyCloner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Time.time > nextClone)
+        if (Time.time > nextClone&&maxNumber>=0)
         {
-            Instantiate(zoombie, transform.position, transform.rotation);
-            nextClone = Time.time + cloneRate;
+            Instantiate(zoombie, transform.position, transform.rotation);   //clone the zoombie
+            nextClone = Time.time + cloneRate;                              //update next clone
+            maxNumber--;
         }
 	}
 }
