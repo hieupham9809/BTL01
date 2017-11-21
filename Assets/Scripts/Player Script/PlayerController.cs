@@ -102,12 +102,13 @@ public class PlayerController : MonoBehaviour {
         {
             if (Application.loadedLevelName == "level1")
             {
+
                 Application.LoadLevel("Level_boss");    //move to level boss
             }
 
             if (Application.loadedLevelName == "Level_boss")
             {
-                Application.LoadLevel("LevelMenu");
+                FindObjectOfType<Manager>().winningGame();  //end game
             }
         }
     }

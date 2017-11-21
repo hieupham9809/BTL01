@@ -5,6 +5,7 @@ using System.Collections;
 public class Score : MonoBehaviour {
     public Text scoreGUIText;
     public Text highscoreGUIText;
+    public Text gameWinningScore;                   //game winning score
     public Text gameoverScore;                      //game over score
     private int score;                              //your current score
     private int highScore;                          //highest score
@@ -55,6 +56,7 @@ public class Score : MonoBehaviour {
     public void save()
     {
         gameoverScore.text = score.ToString();      //show the game over score
+        gameWinningScore.text = score.ToString();
         PlayerPrefs.SetInt(highscoreKey, highScore);
         PlayerPrefs.Save();                         //save score
         Initialize();

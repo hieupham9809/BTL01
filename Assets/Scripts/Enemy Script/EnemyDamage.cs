@@ -6,7 +6,6 @@ public class EnemyDamage : MonoBehaviour {
     float nextdam ;             //the time before next dam
     Animator anim;              //to get the animation of enemy
 
-
     // Use this for initialization
     void Start () {
         nextdam = 0f;                       //set next dam
@@ -14,7 +13,7 @@ public class EnemyDamage : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {	
+	void FixedUpdate () {	
 	}
 
     /*Collise when player enter the collider*/

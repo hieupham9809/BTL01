@@ -43,6 +43,6 @@ public class EnemyHealth : MonoBehaviour {
         FindObjectOfType<Score>().AddPoint(point);                              //add score for player
         Instantiate(enemyHealthEF, transform.position, transform.rotation);     //create blood effect
         Destroy (gameObject);                                                   //destroy enemy object
-        
+        Destroy(transform.root.gameObject);
 	}
 }

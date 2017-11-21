@@ -5,8 +5,9 @@ using System.Collections;
 public class Manager : MonoBehaviour
 {
    
-    public GameObject gameovermenu; // using gameover menu
-    private GameObject title;       //calling the title 
+    public GameObject gameovermenu;     // using gameover menu
+    public GameObject winninggameMenu;  //using winning game menu
+    private GameObject title;           //calling the title 
 
     //Background sounds
     AudioSource BackgroundSound;
@@ -92,10 +93,28 @@ public class Manager : MonoBehaviour
         // turn on the Title
         title.SetActive(true);
 
+        //freeze the time
+        Time.timeScale = 0;
+
         //turn on gameover menu
         gameovermenu.SetActive(true);
         title.SetActive(false);
     }
+
+
+    /*winning game */
+    public void winningGame()
+    {
+        //save highscore
+        FindObjectOfType<Score>().save();
+
+        //turn on the menu
+        winninggameMenu.SetActive(true);
+
+        //freeze the time
+        Time.timeScale = 0;
+    }
+
 
     /* Check if player is playing or not */
     public bool IsPlaying()
