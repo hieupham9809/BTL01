@@ -10,4 +10,8 @@ public class LevelMenuController : MonoBehaviour {
 	public void BackToMenu(){
 		Application.LoadLevel ("MainMenu");     //Loading main menu
 	}
+
+	public void BossLevel(){
+		Application.LoadLevel ("Level_boss"); // Loading Level Boss
+	}
 }
