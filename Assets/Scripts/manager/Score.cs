@@ -61,4 +61,9 @@ public class Score : MonoBehaviour {
         PlayerPrefs.Save();                         //save score
         Initialize();
     }
+
+    public int getScore()
+    {
+        return score;
+    }
 }
