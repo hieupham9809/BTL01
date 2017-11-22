@@ -21,6 +21,10 @@ public class Manager : MonoBehaviour
     AudioSource EnterGameSound;
     public AudioClip EnterGameClip;
 
+    //Menu Gameover Sounds
+    AudioSource GameoverMenuSound;
+    public AudioClip GameoverMenuClip;
+
     public GameObject character;    //calling the main character
 
     // Use this for initialization
@@ -40,21 +44,28 @@ public class Manager : MonoBehaviour
         EnterGameSound.clip = EnterGameClip;
         EnterGameSound.loop = true;         //set loops
         EnterGameSound.volume = 0.6f;       //set volume
-        EnterGameSound.pitch = 0.8f;        //set pitch
+        EnterGameSound.pitch = 1.0f;        //set pitch
         EnterGameSound.Play();              //play the sound
 
         //Background sounds
         BackgroundSound = gameObject.AddComponent<AudioSource>();
         BackgroundSound.clip = BackgroundClip;
         BackgroundSound.loop = true;        //set loops
-        BackgroundSound.volume = 0.5f;      //set volume
-        BackgroundSound.pitch = 0.7f;       //set pitch
+        BackgroundSound.volume = 0.3f;      //set volume
+        BackgroundSound.pitch = 0.9f;       //set pitch
         BackgroundSound.Stop();             //stop the sound
 
         //Game Over sound
         GameoverSound = gameObject.AddComponent<AudioSource>();
         GameoverSound.clip = GameoverClip;
         GameoverSound.Stop();               //stop the sound
+
+        //Game Over sound
+        GameoverMenuSound = gameObject.AddComponent<AudioSource>();
+        GameoverMenuSound.clip = GameoverMenuClip;
+        EnterGameSound.loop = true;         //set loops
+        EnterGameSound.volume = 0.6f;
+        GameoverMenuSound.Stop();           //stop the sound
 
     }
 
@@ -99,6 +110,9 @@ public class Manager : MonoBehaviour
         //turn on gameover menu
         gameovermenu.SetActive(true);
         title.SetActive(false);
+
+        //turn on the music
+        GameoverMenuSound.Play();
     }
 
 

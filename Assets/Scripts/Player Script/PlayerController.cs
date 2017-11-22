@@ -111,6 +111,15 @@ public class PlayerController : MonoBehaviour {
                 FindObjectOfType<Manager>().winningGame();  //end game
             }
         }
+
+        if (other.gameObject.tag == "transport1")
+        {
+            transform.position = GameObject.FindGameObjectsWithTag("destination1")[0].transform.position;
+        }
+        if (other.gameObject.tag == "transport2")
+        {
+            transform.position = GameObject.FindGameObjectsWithTag("destination2")[0].transform.position;
+        }
     }
 
 

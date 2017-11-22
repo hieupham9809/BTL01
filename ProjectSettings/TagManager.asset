@@ -11,6 +11,10 @@ TagManager:
   - Health Item
   - Gold Item
   - Gate
+  - transport1
+  - destination1
+  - destination2
+  - transport2
   layers:
   - Default
   - TransparentFX
