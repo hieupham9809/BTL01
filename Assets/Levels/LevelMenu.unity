@@ -344,11 +344,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22420966, guid: 19824843816f96c45831a76bc485bac9, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -603
+      value: -538
       objectReference: {fileID: 0}
     - target: {fileID: 22420966, guid: 19824843816f96c45831a76bc485bac9, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -252
+      value: -250
       objectReference: {fileID: 0}
     - target: {fileID: 22420966, guid: 19824843816f96c45831a76bc485bac9, type: 2}
       propertyPath: m_SizeDelta.x
